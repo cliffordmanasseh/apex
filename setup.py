@@ -10,6 +10,16 @@ import os
 # ninja build does not work unless include_dirs are abs path
 this_dir = os.path.dirname(os.path.abspath(__file__))
 
+diff --git a/setup.py b/setup.py
+index 063b42d..9eabb49 100644
+--- a/setup.py
++++ b/setup.py
+@@ -91,6 +91,7 @@ def get_cuda_bare_metal_version(cuda_dir):
+     return raw_output, bare_metal_major, bare_metal_minor
+
+ def check_cuda_torch_binary_vs_bare_metal(cuda_dir):
++    return
+
 def get_cuda_bare_metal_version(cuda_dir):
     raw_output = subprocess.check_output([cuda_dir + "/bin/nvcc", "-V"], universal_newlines=True)
     output = raw_output.split()
